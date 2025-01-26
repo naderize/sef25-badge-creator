@@ -33,9 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   shareBtn.addEventListener("click", () => {
     const badge = document.getElementById("badge")
 
-    // Add loading state
     shareBtn.disabled = true
-    shareBtn.innerHTML = "Preparing your badge..."
+    shareBtn.innerHTML = '<span class="animate-spin inline-block mr-2">↻</span> Preparing...'
 
     html2canvas(badge, {
       useCORS: true,
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((canvas) => {
         const imageData = canvas.toDataURL("image/png")
 
-        shareBtn.innerHTML = "Sharing..."
+        shareBtn.innerHTML = '<span class="animate-spin inline-block mr-2">↻</span> Sharing...'
 
         IN.UI.Share()
           .params({
