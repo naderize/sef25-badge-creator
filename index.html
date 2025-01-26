@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEF25 Badge Creator</title>
+    <!-- Add meta tags for security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' platform.linkedin.com api.linkedin.com static.licdn.com *.licdn.com data: https:; img-src * 'self' data: https:;">
     <script src="https://platform.linkedin.com/in.js" type="text/javascript">
         api_key: 77oofvu1rqyfsu
         authorize: true
@@ -11,27 +13,28 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<body class="bg-gradient-to-r from-[#742f9e] to-[#f5541f] min-h-screen flex items-center justify-center p-4">
     <div class="bg-white p-8 rounded-xl shadow-md max-w-md w-full">
         <img src="https://i.ibb.co/ZX9SdQW/1733418915433.jpg" alt="SEF Logo" class="w-24 h-24 mx-auto mb-4 rounded-full">
         <h1 class="text-2xl font-bold text-center mb-6">SEF25 Badge Creator</h1>
         <div id="loginContainer" class="text-center">
-            <button id="loginBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
-                Login with LinkedIn
+            <button id="loginBtn" class="bg-[#0A66C2] text-white px-6 py-3 rounded-lg hover:bg-[#004182] transition-colors flex items-center justify-center gap-2 w-full max-w-xs mx-auto">
+                <span>Login with LinkedIn</span>
+                <img src="https://i.ibb.co/cD3GXrx/linkedin-app-white-icon.png" alt="LinkedIn" class="w-5 h-5">
             </button>
         </div>
         <div id="badgeContainer" class="hidden">
-            <div id="badge" class="border-2 border-gray-300 p-4 rounded-lg mb-4">
-                <img id="profilePic" class="w-24 h-24 rounded-full mx-auto mb-2" alt="Profile Picture">
-                <p id="userName" class="text-center font-semibold"></p>
-                <p class="text-center">I'm attending #SEF25!</p>
+            <div id="badge" class="border-2 border-gray-200 p-6 rounded-lg mb-6 text-center bg-white">
+                <img id="profilePic" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#742f9e]" alt="Profile Picture">
+                <p id="userName" class="text-xl font-bold mb-2"></p>
+                <p class="text-lg text-gray-600">I'm attending #SEF25!</p>
+                <p class="text-sm text-gray-500 mt-2">Sharjah Entrepreneurship Festival<br>February 1-2, 2025</p>
             </div>
-            <button id="shareBtn" class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
-                Share on LinkedIn
+            <button id="shareBtn" class="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                Share Your Badge on LinkedIn
             </button>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
